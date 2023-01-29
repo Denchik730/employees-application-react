@@ -4,8 +4,9 @@ import './employees-list-item.css';
 class EmployeesListItem extends Component  {
   constructor(props) {
     super(props);
+
     this.state = {
-      increase: true,
+      increase: this.props.increase,
       like: true
     }
   }
@@ -15,6 +16,7 @@ class EmployeesListItem extends Component  {
       increase: !increase
     }));
   }
+
 
   onLike = () => {
     this.setState(({like}) => ({
