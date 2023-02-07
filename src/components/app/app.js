@@ -13,9 +13,9 @@ class App extends Component {
     super(props);
     this.state = {
       data: [
-        {name: 'Denis G.', salary: 800, increase: false, id: 1},
-        {name: 'Alex B.', salary: 3000, increase: true, id: 2},
-        {name: 'Oleg G.', salary: 15000, increase: false, id: 3},
+        {name: 'Denis G.', salary: 800, increase: false,rise: true, id: 1},
+        {name: 'Alex B.', salary: 3000, increase: true,rise: false, id: 2},
+        {name: 'Oleg G.', salary: 15000, increase: false,rise: false, id: 3},
       ]
     }
     this.maxId = 4;
@@ -23,11 +23,8 @@ class App extends Component {
 
   deleteItem = (id) => {
     this.setState(({data}) => {
-  
-      const newData = data.filter(item => item.id !== id)
-
       return {
-        data: newData
+        data: data.filter(item => item.id !== id)
       }
     });
   }
@@ -37,6 +34,7 @@ class App extends Component {
       name: name,
       salary: salary,
       increase: false,
+      rise: false,
       id: this.maxId++
     }
 
@@ -47,14 +45,31 @@ class App extends Component {
       return {
         data: newArr
       }
-    })
+    });
   }
 
+  onToggleIncrease = (id) => {
+    this.setState(({data}) => ({
+      data: data.map(item => {
+        if (item.id === id) {
+          return {...item, increase: !item.increase}
+        }
+        
+        return item;
+      })
+    }));
+  }
+
+  onToggleRise = (id) => {
+    console.log(`Rise ${id}`);
+  }
   
   render() {
+    const employees = this.state.data.length;
+    const increasedEmployees = this.state.data.filter(item => item.increase).length;
     return (
       <div className="app">
-        <AppInfo/>
+        <AppInfo employees={employees} increasedEmployees={increasedEmployees}/>
   
         <div className="search-panel">
           <SearchPanel/>
@@ -64,7 +79,8 @@ class App extends Component {
         <EmployeesList 
           data={this.state.data}
           onDelete={this.deleteItem}
-        />
+          onToggleIncrease={this.onToggleIncrease}
+          onToggleRise={this.onToggleRise}/>
         <EmployeesAddForm
           onCreate={this.createItem}
         />
