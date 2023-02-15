@@ -36,8 +36,7 @@
 
 1. Загрузить архив репозитория или сделать это с помощью `git clone https://github.com/Denchik730/employees-application-react.git`
 2. Проектр настроен с помощью `Create React App`, поэтому для сборки проекта необходим `Node.js` скачать: https://nodejs.org/en/. Затем в терминале (находясь в папке проекта) скачиваем все пакеты из файла package.jsom с помощью команды `npm i`
-3. Для корректной работы запросов, запускаем через локальные серверы, такие как: MAMP или OpenServer и тому подобные (читаем документацию MAMP: https://documentation.mamp.info/, OpenServer: https://ospanel.io/docs/)
-4. Запустить проект при помощи команды `npm start`, если не вышло попробовать `npx npm start`
+3. Запустить проект при помощи команды `npm start`, если не вышло попробовать `npx npm start`
 
 ## Планы доработки:
 
