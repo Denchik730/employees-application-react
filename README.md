@@ -6,7 +6,7 @@
 
 ## Превью:
 
-![Видео без названия — сделано в Clipchamp (1)](https://user-images.githubusercontent.com/102176847/219078243-4c0834eb-64b0-4cc0-a772-5ea748d2e952.gif)
+![Видео без названия — сделано в Clipchamp (1)](https://user-images.githubusercontent.com/102176847/228533849-44cab5fa-5152-476e-a233-16fe270afbf4.gif)
 
 ## Описание: данный проект решает такие проблемы как:
 
